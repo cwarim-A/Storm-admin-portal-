@@ -1,7 +1,7 @@
-import { DebateIcon, LiveIcon, PastIcon, UpcomingIcon } from "@/assets/icons";
+// import { DebateIcon, LiveIcon, PastIcon, UpcomingIcon } from "@/assets/icons";
 import CustomCard from "@/components/base/CustomCard";
 import { Button } from "@/components/ui/button";
-import Badge from "@/components/base/Badge";
+// import Badge from "@/components/base/Badge"; // commented out: unused
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
 import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationNext, PaginationLink } from "@/components/ui/pagination";
 import { Input } from "@/components/ui/input";

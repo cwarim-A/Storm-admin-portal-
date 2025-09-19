@@ -1,4 +1,4 @@
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetClose, SheetContent, /* SheetDescription, */ SheetFooter, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { CloseIcon, IconWrapper } from "../../../../assets/icons";
 
 export default function ProfitSharingDetailsOffcanvas({

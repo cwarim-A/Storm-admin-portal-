@@ -1,4 +1,4 @@
-import { ChevronDownIcon, EmptyBoxIcon, IconWrapper } from "@/assets/icons";
+import { ChevronDownIcon, IconWrapper } from "@/assets/icons";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger, DropdownMenuCheckboxItem } from "@/components/ui/dropdown-menu";
 import CustomCard from "@/components/base/CustomCard";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
