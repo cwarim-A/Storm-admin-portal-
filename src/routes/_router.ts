@@ -1,0 +1,25 @@
+export const _router = {
+	landing: {},
+	admin: {
+		auth: { index: "/admin", login: "/admin/login", forgotpassword: "/admin/forgot-password", resetpassword: "/admin/reset-password" },
+		dashboard: {
+			admin: "/admin/dashboard/admin",
+			base: "/admin/dashboard",
+			index: "/admin/dashboard",
+			debate: "/admin/dashboard/debate",
+			debateAdd: "/admin/dashboard/debate/new",
+			debateEdit: "/admin/dashboard/debate/edit",
+			debateCategory: "/admin/dashboard/debate-category",
+			ticket: "/admin/dashboard/ticket",
+			moderators: "/admin/dashboard/moderators",
+			settings: "/admin/dashboard/settings",
+			addSubscriber: "/admin/dashboard/subscription/add",
+			subscriptions: "/admin/dashboard/subscription",
+			subscriptionHistory: "/admin/dashboard/subscription/history",
+			payouts: "/admin/dashboard/payouts",
+			profitSharing: "/admin/dashboard/profit-sharing",
+			userDetails: "/admin/dashboard/users/:id",
+			users: "/admin/dashboard/users",
+		},
+	},
+};
