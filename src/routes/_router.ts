@@ -12,6 +12,7 @@ export const _router = {
 			debateCategory: "/admin/dashboard/debate-category",
 			ticket: "/admin/dashboard/ticket",
 			moderators: "/admin/dashboard/moderators",
+			moderatorDetails:"/admin/dashboard/moderators/:id",
 			settings: "/admin/dashboard/settings",
 			addSubscriber: "/admin/dashboard/subscription/add",
 			subscriptions: "/admin/dashboard/subscription",

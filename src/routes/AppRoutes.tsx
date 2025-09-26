@@ -22,6 +22,8 @@ import SubscriptionHistory from "../admin/dashboard/pages/Subscription/Subscript
 import AddSubscriber from "@/admin/dashboard/pages/Subscription/AddSubscriber";
 import UserDetails from "../admin/dashboard/pages/Users/UserDetails";
 import Setting from "../admin/dashboard/pages/Settings/Setting";
+import ModeratorDetails from "@/admin/dashboard/pages/Moderators/ModeratorDetails";
+import Admin from "@/admin/dashboard/pages/Admin/Admin";
 
 export const appRouter = createBrowserRouter([
 	{
@@ -93,6 +95,10 @@ export const appRouter = createBrowserRouter([
 				element: <UserDetails />,
 			},
 			{
+				path: _router.admin.dashboard.admin,
+				element: <Admin/>
+			},
+			{
 				path: _router.admin.dashboard.debateCategory,
 				element: <DebateCategory />,
 			},
@@ -103,6 +109,10 @@ export const appRouter = createBrowserRouter([
 			{
 				path: _router.admin.dashboard.moderators,
 				element: <Moderators />,
+			},
+			{
+				path: _router.admin.dashboard.moderatorDetails,
+				element: <ModeratorDetails/>,
 			},
 			{
 				path: _router.admin.dashboard.subscriptions,
