@@ -1,7 +1,7 @@
 
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
-import { Filter } from "lucide-react";
+import { Edit, Filter } from "lucide-react";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 // import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext } from "@/components/ui/pagination";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,7 @@ import {
     PermissionIcon,
     ThreeDotsIcon,
 } from "@/assets/icons";
-import { AddNewAdminModal } from "./AdminModal";
+import { AddNewAdminModal,EditAdminModal } from "./AdminModal";
 
 
 import { useState } from "react";
@@ -24,7 +24,7 @@ import { useState } from "react";
 export default function Admin() {
     // const [page, setPage] = useState(1);
     const [addNewAdminModalOpen, setAddNewAdminModalOpen] = useState(false);
-    // const [suspendModeratorModalOpen, setSuspendModeratorModalOpen] = useState(false);
+    const [editAdminModalOpen, setEditAdminModalOpen] = useState(false);
     // const [warnModeratorModalOpen, setWarnModeratorModalOpen] = useState(false);
     // const [banModeratorModalOpen, setBanModeratorModalOpen] = useState(false);
 
@@ -86,7 +86,7 @@ export default function Admin() {
                                             </Button>
                                         </DropdownMenuTrigger>
                                         <DropdownMenuContent align="end">
-                                            <DropdownMenuItem className="cursor-pointer" >
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => setEditAdminModalOpen(true)} >
 
                                                 <IconWrapper className="text-lg">
                                                     <EditIcon/>
@@ -141,6 +141,7 @@ export default function Admin() {
             <WarnModeratorModal open={warnModeratorModalOpen} onOpenChange={setWarnModeratorModalOpen} />
             <BanModeratorModal open={banModeratorModalOpen} onOpenChange={setBanModeratorModalOpen} /> */}
             <AddNewAdminModal open={addNewAdminModalOpen} onOpenChange={setAddNewAdminModalOpen} />
+            <EditAdminModal open={editAdminModalOpen} onOpenChange={setEditAdminModalOpen} />
         </div>
     );
 }
