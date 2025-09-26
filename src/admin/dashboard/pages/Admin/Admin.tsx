@@ -1,7 +1,7 @@
 
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table";
-import { Edit, Filter } from "lucide-react";
+import {  Filter } from "lucide-react";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 // import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationPrevious, PaginationNext } from "@/components/ui/pagination";
 import { Button } from "@/components/ui/button";
