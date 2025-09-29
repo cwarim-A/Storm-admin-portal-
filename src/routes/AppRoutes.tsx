@@ -24,6 +24,7 @@ import UserDetails from "../admin/dashboard/pages/Users/UserDetails";
 import Setting from "../admin/dashboard/pages/Settings/Setting";
 import ModeratorDetails from "@/admin/dashboard/pages/Moderators/ModeratorDetails";
 import Admin from "@/admin/dashboard/pages/Admin/Admin";
+import PayoutDetails from "@/admin/dashboard/pages/Payouts/PayoutDetails";
 
 export const appRouter = createBrowserRouter([
 	{
@@ -129,6 +130,10 @@ export const appRouter = createBrowserRouter([
 			{
 				path: _router.admin.dashboard.payouts,
 				element: <Payouts />,
+			},
+			{
+				path: _router.admin.dashboard.payoutDetails,
+				element: <PayoutDetails />,
 			},
 			{
 				path: _router.admin.dashboard.profitSharing,

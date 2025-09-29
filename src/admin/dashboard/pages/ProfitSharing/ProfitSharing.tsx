@@ -11,6 +11,7 @@ import { Switch } from "@/components/ui/switch";
 import { Edit, PlusIcon, TrashIcon } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 import ProfitSharingDetailsOffcanvas from "./ProfitSharingDetailsOffcanvas";
+import { EditProfitSharingModal } from "./ProfitSharingModal";
 
 type TierItem = {
 	id: string;
@@ -38,6 +39,7 @@ export default function ProfitSharing() {
 	const [data, setData] = useState<TierItem[]>(sample);
 	const [sheetOpen, setSheetOpen] = useState(false);
 	const [selectedId, setSelectedId] = useState<string | null>(null);
+	const [editModalOpen, setEditModalOpen] = useState(false);
 
 	const filtered = useMemo(() => {
 		if (!q) return data;
@@ -138,11 +140,11 @@ export default function ProfitSharing() {
 														</IconWrapper>
 														<span>View</span>
 													</DropdownMenuItem>
-													<DropdownMenuItem className="cursor-pointer">
+													<DropdownMenuItem onClick={()=>setEditModalOpen(true)} className="cursor-pointer">
 														<IconWrapper>
 															<Edit />
 														</IconWrapper>
-														<span>Edit</span>
+														<span>Update</span>
 													</DropdownMenuItem>
 													<DropdownMenuSeparator />
 													<DropdownMenuItem className="cursor-pointer text-destructive">
@@ -188,6 +190,10 @@ export default function ProfitSharing() {
 					if (!o) setSelectedId(null);
 				}}
 				item={data.find((d) => d.id === selectedId) ?? null}
+			/>
+			<EditProfitSharingModal
+				open={editModalOpen}
+				onOpenChange={setEditModalOpen}
 			/>
 		</div>
 	);

@@ -13,7 +13,7 @@ import {
     PermissionIcon,
     ThreeDotsIcon,
 } from "@/assets/icons";
-import { AddNewAdminModal,EditAdminModal } from "./AdminModal";
+import { AddNewAdminModal,DeleteAdminModal,EditAdminModal, ManagePermissionsModal } from "./AdminModal";
 
 
 import { useState } from "react";
@@ -25,8 +25,9 @@ export default function Admin() {
     // const [page, setPage] = useState(1);
     const [addNewAdminModalOpen, setAddNewAdminModalOpen] = useState(false);
     const [editAdminModalOpen, setEditAdminModalOpen] = useState(false);
-    // const [warnModeratorModalOpen, setWarnModeratorModalOpen] = useState(false);
-    // const [banModeratorModalOpen, setBanModeratorModalOpen] = useState(false);
+    const [deleteAdminModalOpen, setDeleteAdminModalOpen] = useState(false);
+    const [managePermissionsModalOpen, setManagePermissionsModalOpen] = useState(false);
+
 
     const pageData = Array.from({ length: 8 }, (_, i) => ({
         id: `${i + 1}`,
@@ -40,19 +41,19 @@ export default function Admin() {
 
     return (
         <div className="py-5">
-            <div className=" border border-[#E3E3E3] rounded-xl h-auto w-[95%] px-5 py-5 flex flex-col gap-5 ">
-                <div className="flex gap-5">
-                    <div className="flex gap-5">
+            <div className=" border border-[#E3E3E3] rounded-xl h-auto w-full md:w-[95%] px-5 py-5 flex flex-col gap-5 ">
+                <div className="flex gap-5 flex-col md:flex-row">
+                    <div className="flex gap-5 flex-col md:flex-row ">
                         <div className="flex items-center border w-fit px-3 py-2 rounded-2xl ">
                             <input type="text" placeholder="search Debate" className="outline-none" />
                             <MagnifyingGlassIcon className="h-5 w-5 text-gray-500" />
                         </div>
-                        <div className="flex items-center border w-fit px-3 py-2 rounded-2xl gap-3">
+                        <div className="flex items-center border w-fit px-3 py-2 rounded-2xl gap-3 cursor-pointer">
                             <Filter className="h-5 w-5 text-gray-500" />
                             <span className="text-gray-500">Filter</span>
                         </div>
                     </div>
-                    <Button onClick={() => setAddNewAdminModalOpen(true)} variant={"secondary"} className="ml-auto bg-[#FEDE2B] rounded-3xl py-6">
+                    <Button onClick={() => setAddNewAdminModalOpen(true)} variant={"secondary"} className="ml-auto bg-[#FEDE2B] rounded-3xl py-6 !w-full md:!w-fit text-black hover:bg-[#FEDE2B]">
                         <IconWrapper>
                             <AddIcon/>
                         </IconWrapper>
@@ -94,13 +95,13 @@ export default function Admin() {
                                                 <span>Edit</span>
 
                                             </DropdownMenuItem>
-                                            <DropdownMenuItem className="cursor-pointer" >
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => setDeleteAdminModalOpen(true)} >
                                                 <IconWrapper className="text-lg">
                                                     <DeleteIcon/>
                                                 </IconWrapper>
                                                 <span>Delete</span>
                                             </DropdownMenuItem>
-                                            <DropdownMenuItem className="cursor-pointer" >
+                                            <DropdownMenuItem className="cursor-pointer" onClick={() => setManagePermissionsModalOpen(true)} >
                                                 <IconWrapper className="text-lg">
                                                     <PermissionIcon/>
                                                 </IconWrapper>
@@ -142,6 +143,8 @@ export default function Admin() {
             <BanModeratorModal open={banModeratorModalOpen} onOpenChange={setBanModeratorModalOpen} /> */}
             <AddNewAdminModal open={addNewAdminModalOpen} onOpenChange={setAddNewAdminModalOpen} />
             <EditAdminModal open={editAdminModalOpen} onOpenChange={setEditAdminModalOpen} />
+            <DeleteAdminModal open={deleteAdminModalOpen} onOpenChange={setDeleteAdminModalOpen} />
+            <ManagePermissionsModal open={managePermissionsModalOpen} onOpenChange={setManagePermissionsModalOpen} />
         </div>
     );
 }
